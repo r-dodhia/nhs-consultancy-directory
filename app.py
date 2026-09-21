@@ -11,11 +11,11 @@ THEME_ICONS = {
     "Digital & automation": "⚙️",
     "Analytics & evaluation": "📊",
     "Clinical service redesign": "🩺",
-    "Engagement and consultation": "💬",
+    "Engagement & consultation": "💬",
     "Finance & corporate": "🏛️",
     "Interims": "💼",
-    "OD and leadership development": "👥",
-    "PMO and delivery support": "📋",
+    "OD & leadership development": "👥",
+    "PMO & delivery support": "📋",
     "Quality improvement": "✅",
 }
 
