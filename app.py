@@ -130,7 +130,7 @@ elif st.session_state.page == "About this directory":
     st.sidebar.button("Directory", on_click=toggle_page, use_container_width=True)
     
     st.title("About this directory")
-    st.write("This tool is designed to help NHS leads identify and connect with internal consultancy partners across a wide range of capabilities.")
+    st.write("This tool is designed to help NHS leads identify and connect with internal NHS consultancy partners across a wide range of capabilities. It was made for the NHS Internal Consultancies Network. https://www.linkedin.com/groups/42571010/")
     
     st.subheader("How this information was collected")
     st.write("The capabilities and profiles listed here were collated through an initial mapping exercise of internal NHS consultancies.")
