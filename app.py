@@ -137,3 +137,15 @@ elif st.session_state.page == "About this directory":
     
     st.subheader("Updating the directory")
     st.write("This is a live proof of concept. If you need to update your consultancy's capabilities, add a missing profile, or provide feedback on the platform, please contact rakesh.dodhia@nhs.net.")
+
+
+# Add the clickable network logo to the bottom of the sidebar
+st.sidebar.markdown("---")
+st.sidebar.markdown(
+    """
+    <a href="https://www.linkedin.com/groups/42571010/" target="_blank">
+        <img src="https://raw.githubusercontent.com/r-dodhia/nhs-consultancy-directory/main/NHS Internal Consultancies Network.png" width="100%" alt="NHS Internal Consultancies Network">
+    </a>
+    """,
+    unsafe_allow_html=True
+)
