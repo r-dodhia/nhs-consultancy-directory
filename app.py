@@ -144,6 +144,8 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 )
 
+st.sidebar.markdown("---")
+
 # 2. Navigation Button
 if st.session_state.page == "Directory":
     st.sidebar.button("About", on_click=toggle_page, use_container_width=True)
