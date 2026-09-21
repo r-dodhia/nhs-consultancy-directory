@@ -64,10 +64,6 @@ if st.session_state.page == "Directory":
         
     selected_cap = st.sidebar.selectbox("Capability", caps)
 
-    # Navigation toggle below the filters
-    st.sidebar.markdown("---")
-    st.sidebar.button("About", on_click=toggle_page, use_container_width=True)
-
     # Filtering logic
     filtered_consultancies = set(all_consultancies)
 
@@ -126,9 +122,6 @@ if st.session_state.page == "Directory":
                 st.write("No specific capabilities mapped.")
 
 elif st.session_state.page == "About this directory":
-    # Navigation toggle standalone on the about page
-    st.sidebar.button("Directory", on_click=toggle_page, use_container_width=True)
-    
     st.title("About this directory")
     st.write("This tool is designed to help NHS leads identify and connect with internal NHS consultancy partners across a wide range of capabilities. It was made for the NHS Internal Consultancies Network. https://www.linkedin.com/groups/42571010/")
     
@@ -138,14 +131,21 @@ elif st.session_state.page == "About this directory":
     st.subheader("Updating the directory")
     st.write("This is a live proof of concept. If you need to update your consultancy's capabilities, add a missing profile, or provide feedback on the platform, please contact rakesh.dodhia@nhs.net.")
 
-
-# Add the clickable network logo to the bottom of the sidebar
+# --- SIDEBAR FOOTER ---
 st.sidebar.markdown("---")
+
+# 1. Clickable Logo
 st.sidebar.markdown(
     """
     <a href="https://www.linkedin.com/groups/42571010/" target="_blank">
-        <img src="https://raw.githubusercontent.com/r-dodhia/nhs-consultancy-directory/main/NHS Internal Consultancies Network.png" width="100%" alt="NHS Internal Consultancies Network">
+        <img src="https://raw.githubusercontent.com/r-dodhia/nhs-consultancy-directory/main/NHS%20Internal%20Consultancies%20Network.png" width="100%" alt="NHS Internal Consultancies Network">
     </a>
     """,
     unsafe_allow_html=True
 )
+
+# 2. Navigation Button
+if st.session_state.page == "Directory":
+    st.sidebar.button("About", on_click=toggle_page, use_container_width=True)
+else:
+    st.sidebar.button("Directory", on_click=toggle_page, use_container_width=True)
