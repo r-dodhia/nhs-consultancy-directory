@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Page setup
-st.set_page_config(page_title="Internal NHS consultancies", layout="wide")
+st.set_page_config(page_title="Internal NHS consultancies", page_icon="https://www.england.nhs.uk/wp-content/themes/nhsengland/favicon.ico", layout="wide")
 
 # Theme icon mapping 
 THEME_ICONS = {
