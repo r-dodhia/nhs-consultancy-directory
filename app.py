@@ -133,7 +133,7 @@ elif st.session_state.page == "About this directory":
     st.write("This tool is designed to help NHS leads identify and connect with internal consultancy partners across a wide range of capabilities.")
     
     st.subheader("How this information was collected")
-    st.write("The capabilities and profiles listed here were collated through an initial mapping exercise of internal NHS consultancies. It serves as a lightweight starting point for conversations and scoping, rather than a replacement for formal due diligence or procurement checks.")
+    st.write("The capabilities and profiles listed here were collated through an initial mapping exercise of internal NHS consultancies.")
     
     st.subheader("Updating the directory")
-    st.write("This is a live proof of concept. If you need to update your consultancy's listed capabilities, add a missing profile, or provide feedback on the platform, please contact **Rakesh Dodhia** at **Transformation Partners in Health and Care (TPHC)**.")
+    st.write("This is a live proof of concept. If you need to update your consultancy's capabilities, add a missing profile, or provide feedback on the platform, please contact rakesh.dodhia@nhs.net.")
