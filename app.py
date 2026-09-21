@@ -123,7 +123,7 @@ if st.session_state.page == "Directory":
 
 elif st.session_state.page == "About this directory":
     st.title("About this directory")
-    st.write("This tool is designed to help NHS leads identify and connect with internal NHS consultancy partners across a wide range of capabilities. It was made for the NHS Internal Consultancies Network. https://www.linkedin.com/groups/42571010/")
+    st.write("This tool is designed to help NHS leads identify and connect with internal NHS consultancy partners across a wide range of capabilities. It was made by [Transformation Partners in Health and Care (TPHC)](https://www.transformationpartners.nhs.uk/) on behalf of the [NHS Internal Consultancies Network](https://www.linkedin.com/groups/42571010/).")
     
     st.subheader("How this information was collected")
     st.write("The capabilities and profiles listed here were collated through an initial mapping exercise of internal NHS consultancies.")
