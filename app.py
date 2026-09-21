@@ -4,21 +4,30 @@ import pandas as pd
 # Page setup
 st.set_page_config(page_title="Internal NHS consultancies", layout="wide")
 
-# Theme icon mapping
+# Theme icon mapping 
 THEME_ICONS = {
-"Strategy & advisory": "🧭",
-"Transformation & change": "🔄",
-"Digital & automation": "⚙️",
-"Analytics & evaluation": "📊",
-"Clinical service redesign": "🩺",
-"Engagement & consultation": "💬",
-"Finance & corporate": "🏛️",
-"Interims": "💼",
-"OD & leadership development": "👥",
-"PMO & delivery support": "📋",
-"Quality improvement": "✅",
+    "Strategy & advisory": "🧭",
+    "Transformation & change": "🔄",
+    "Digital & automation": "⚙️",
+    "Analytics & evaluation": "📊",
+    "Clinical service redesign": "🩺",
+    "Engagement & consultation": "💬",
+    "Finance & corporate": "🏛️",
+    "Interims": "💼",
+    "OD & leadership development": "👥",
+    "PMO & delivery support": "📋",
+    "Quality improvement": "✅",
 }
 
+# Initialise session state for navigation
+if 'page' not in st.session_state:
+    st.session_state.page = "Directory"
+
+def toggle_page():
+    if st.session_state.page == "Directory":
+        st.session_state.page = "About this directory"
+    else:
+        st.session_state.page = "Directory"
 
 @st.cache_data
 def load_data():
@@ -36,12 +45,7 @@ def load_data():
 
 capability_df, all_consultancies, profile_map = load_data()
 
-# Sidebar navigation
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Directory", "About this directory"])
-st.sidebar.markdown("---")
-
-if page == "Directory":
+if st.session_state.page == "Directory":
     # Header
     st.title("Find an internal NHS consultancy")
     st.write("Search and filter to find internal NHS partners for strategy, transformation, analytics, and delivery programmes.")
@@ -59,6 +63,10 @@ if page == "Directory":
         caps = ['All'] + sorted(capability_df['Capability'].unique().tolist())
         
     selected_cap = st.sidebar.selectbox("Capability", caps)
+
+    # Navigation toggle below the filters
+    st.sidebar.markdown("---")
+    st.sidebar.button("About", on_click=toggle_page, use_container_width=True)
 
     # Filtering logic
     filtered_consultancies = set(all_consultancies)
@@ -117,12 +125,15 @@ if page == "Directory":
             else:
                 st.write("No specific capabilities mapped.")
 
-elif page == "About this directory":
+elif st.session_state.page == "About this directory":
+    # Navigation toggle standalone on the about page
+    st.sidebar.button("Directory", on_click=toggle_page, use_container_width=True)
+    
     st.title("About this directory")
     st.write("This tool is designed to help NHS leads identify and connect with internal consultancy partners across a wide range of capabilities.")
     
     st.subheader("How this information was collected")
-    st.write("The capabilities and profiles listed here were collated through an initial mapping exercise of internal NHS consultancies.")
+    st.write("The capabilities and profiles listed here were collated through an initial mapping exercise of internal NHS consultancies. It serves as a lightweight starting point for conversations and scoping, rather than a replacement for formal due diligence or procurement checks.")
     
     st.subheader("Updating the directory")
-    st.write("This is a live proof of concept. If you need to update your consultancy's listed capabilities, add a missing profile, or provide feedback on the platform, please contact rakesh.dodhia@nhs.net.")
+    st.write("This is a live proof of concept. If you need to update your consultancy's listed capabilities, add a missing profile, or provide feedback on the platform, please contact **Rakesh Dodhia** at **Transformation Partners in Health and Care (TPHC)**.")
