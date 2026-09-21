@@ -2,7 +2,7 @@
 
 A lightweight, searchable directory to help NHS digital leads identify and connect with internal NHS consultancy partners for strategy, transformation, analytics, and delivery programmes.
 
-The live application is hosted on Streamlit Community Cloud: [https://nhs-consultancy-directory-7dgsy35lvdf88oikwrx9gq.streamlit.app/]
+The live application is hosted on Streamlit Community Cloud: [https://nhs-consultancy-directory.streamlit.app/]
 
 ## How it works
 
