@@ -6,17 +6,17 @@ st.set_page_config(page_title="Internal NHS consultancies", layout="wide")
 
 # Theme icon mapping
 THEME_ICONS = {
-    "Strategy & advisory": "🧭",
-    "Transformation & change": "🔄",
-    "Digital & automation": "⚙️",
-    "Analytics & evaluation": "📊",
-    "Clinical service redesign": "🩺",
-    "Engagement & consultation": "💬",
-    "Finance & corporate": "🏛️",
-    "Interims": "💼",
-    "OD & leadership development": "👥",
-    "PMO & delivery support": "📋",
-    "Quality improvement": "✅",
+"Strategy & advisory": "🧭",
+"Transformation & change": "🔄",
+"Digital & automation": "⚙️",
+"Analytics & evaluation": "📊",
+"Clinical service redesign": "🩺",
+"Engagement & consultation": "💬",
+"Finance & corporate": "🏛️",
+"Interims": "💼",
+"OD & leadership development": "👥",
+"PMO & delivery support": "📋",
+"Quality improvement": "✅",
 }
 
 
