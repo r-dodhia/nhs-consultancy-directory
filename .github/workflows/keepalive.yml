@@ -1,0 +1,26 @@
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    # Runs at 08:00 UTC every weekday (Monday to Friday)
+    - cron: '0 8 * * 1-5'
+  workflow_dispatch: # Allows you to run it manually from the Actions tab
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create automated commit
+        run: |
+          # Generate a random string to ensure a file change
+          echo "$(date) - Automated keepalive commit" > keepalive.txt
+          
+          # Configure Git to commit the change
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add keepalive.txt
+          git commit -m "Automated keepalive commit to prevent Streamlit hibernation"
+          git push
