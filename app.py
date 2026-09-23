@@ -38,6 +38,9 @@ def load_data():
     capability_df['Service Theme'] = capability_df['Service Theme'].astype(str).str.strip()
     capability_df['Capability'] = capability_df['Capability'].astype(str).str.strip()
     
+    # Add this line to sort capabilities alphabetically
+    capability_df = capability_df.sort_values(by='Capability')
+    
     all_consultancies = sorted(profile_df['Consultancy'].dropna().unique().tolist())
     profile_map = profile_df.set_index('Consultancy').to_dict('index')
     
